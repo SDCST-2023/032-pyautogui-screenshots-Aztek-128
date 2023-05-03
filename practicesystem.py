@@ -9,17 +9,11 @@ if cursor != None:
     time.sleep(3)
     xcoords = cursor[0]
     ycoords = cursor[1]
-    print(cursor)
-    p.moveTo(cursor[0],cursor[1]-60)
-    L = 0
-    while L<10:
-        p.moveTo(cursor[0], cursor[1]+600,4)
-        for i in range(10):
-            p.click(cursor[0],cursor[1],0.5)
-            ycoords = cursor[1]+60
-        
-        
+    dy = 70
 
+    while True:
+        p.click(xcoords,ycoords-250,1)
+        ycoords = ycoords+dy
 
 time.sleep(3)
 
