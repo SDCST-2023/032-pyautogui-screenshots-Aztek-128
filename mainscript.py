@@ -16,11 +16,16 @@ def clicks():
             p.click(x)
             y = y+1
 
+    
+
+
+
+
 def upgrade():
-    store = p.locateCenterOnScreen('assets/store.png',confidence = 0.7)
+    store = p.locateCenterOnScreen('assets/info.png',confidence = 0.7)
     x = store[0]
     y = store[1]
-    p.moveTo(x-130,y+50)
+    p.moveTo(x+80,y+50)
     p.click()
 
 def purchase():
