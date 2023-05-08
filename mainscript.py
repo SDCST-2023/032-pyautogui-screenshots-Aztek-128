@@ -7,13 +7,13 @@ p.PAUSE = 0.1
 
 
 def clicks():
-    x = p.locateCenterOnScreen('assets/cookie.png')
-    print(x)
-    if x != None:
-        p.moveTo(x)
+    #x = p.locateCenterOnScreen('assets/cookie.png')
+    #print(x)
+    if cookie != None:
+        p.moveTo(cookie)
         y = 0
         while y < numclicks:
-            p.click(x)
+            p.click(cookie)
             y = y+1
 
     
@@ -51,22 +51,63 @@ def purchase():
     p.scroll(300)        
 
 
-'''def gold():
-    while True:
-        golden = p.locateCenterOnScreen('assets/goldencookie.png')
-        if golden !=None:
-            p.click(golden)'''
+def gold():
+    start = time.time()
+    future = start + 10
 
+    current = time.time()
+    if current  < future:
+        while True:
+            golden = p.locateCenterOnScreen('assets/goldencookie.png',confidence = 0.5)
+            print(golden)
+            if golden!= None:
+                p.click(golden)
+                break
+
+
+            while True:
+                golden = p.locateCenterOnScreen('assets/goldencookie3.png',confidence = 0.5)
+                print(golden)
+                if golden!= None:
+                    p.click(golden)
+                    break
+
+                while True:
+                    golden = p.locateCenterOnScreen('assets/goldencookie2.png',confidence = 0.5)
+                    print(golden)
+                    if golden!= None:
+                        p.click(golden)
+                        break
+
+                    while True:
+                        golden = p.locateCenterOnScreen('assets/goldencookie4.png',confidence = 0.5)
+                        print(golden)
+                        if golden!= None:
+                            p.click(golden)
+                            break
+                            
+                        while True:
+                            golden = p.locateCenterOnScreen('assets/goldencookie5.png',confidence = 0.5)
+                            print(golden)
+                            if golden!= None:
+                                p.click(golden)
+                                break
+
+  
 
 
 
 def main():
     p.confirm("run?")
     p.hotkey('ctrl','win','right')
+    p.sleep(0.5)
+    global cookie
+    cookie = p.locateCenterOnScreen('assets/cookie.png', confidence = 0.5)
+
     while True:
         clicks() 
         upgrade()  
         purchase() 
-        #gold()
+        gold()
 
 main()
