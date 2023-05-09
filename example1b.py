@@ -8,4 +8,6 @@ It does not speed up the search but might allow you to find matches that are som
 """
 
 x = pyautogui.locateCenterOnScreen('assets/winIcon.png',region=(0,800,100,100), confidence=0.9)
-print("found at",x)
+if x != None:
+
+    print("found at",x)
