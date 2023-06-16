@@ -16,11 +16,6 @@ def clicks():
             p.click(cookie)
             y = y+1
 
-    
-
-
-
-
 def upgrade():
     store = p.locateCenterOnScreen('assets/info.png',confidence = 0.7)
     x = store[0]
