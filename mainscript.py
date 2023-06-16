@@ -53,7 +53,7 @@ def purchase():
 
 def gold():
     start = time.time()
-    future = start + 10
+    future = start + 5
     current = time.time()
 
 
